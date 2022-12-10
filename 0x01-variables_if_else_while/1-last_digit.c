@@ -4,7 +4,7 @@
 
 /**
  * main - last digit
- * short description - assign a random number to the variable n each time it is executed
+ * short description - assign random number to the variable n whenever executed
  *
  *Return: 0
  */
