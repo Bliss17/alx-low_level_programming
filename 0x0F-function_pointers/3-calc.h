@@ -1,30 +1,28 @@
-#include "function_pointers.h"
+#ifndef CALC_H
+#define CALC_H
+
+/*
+ * File: 3-calc.h
+ * Desc: Header file containing all structures and
+ *       prototypes used by the 3-main.c program.
+ */
 
 /**
-  * int_index - ...
-  * @array: ...
-  * @size: ...
-  * @cmp: ...
-  *
-  * Return: ...
-  */
-int int_index(int *array, int size, int (*cmp)(int))
+ * struct op - A struct op.
+ * @op: The operator.
+ * @f: The associated function.
+ */
+typedef struct op
 {
-	int i = 0;
+	char *op;
+	int (*f)(int a, int b);
+} op_t;
 
-	if (size > 0)
-	{
-		if (array != NULL && cmp != NULL)
-		{
-			while (i < size)
-			{
-				if (cmp(array[i]))
-					return (i);
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+int (*get_op_func(char *s))(int, int);
 
-				i++;
-			}
-		}
-	}
-
-	return (-1);
-}
+#endif
