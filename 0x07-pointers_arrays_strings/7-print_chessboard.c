@@ -1,32 +1,21 @@
-# include "main.h"
-void _putchar(char c); // Declaration for the _putchar function
+#include "main.h"
 
-void print_chessboard(char (*a)[8]) {
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-            _putchar(a[i][j]);
-            _putchar(' ');
-        }
-        _putchar('\n');
-    }
-}
+/**
+ * print_chessboard - prints the chessboard
+ * @a: pointer to pieces to print
+ *
+ * Return: void
+ */
+void print_chessboard(char (*a)[8])
+{
+	int i, j;
 
-void _putchar(char c) {
-}
-
-int main(void) {
-    char chessboard[8][8] = {
-        {'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'},	    
-        {'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '},
-        {'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'},
-	{'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'}
-    };
-
-    print_chessboard(chessboard);
-
-    return 0;
+	for (i = 0; i < 8; i++)
+	{
+		for (j = 0; j < 8; j++)
+		{
+			_putchar(a[i][j]);
+		}
+		_putchar('\n');
+	}
 }
